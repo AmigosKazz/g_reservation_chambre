@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="652.0" prefWidth="865.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kaznarah.reservation_chambre_hotel.Login">
+   <children>
+      <Text layoutX="376.0" layoutY="71.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CONNEXION" textAlignment="CENTER">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Text>
+      <Pane layoutX="269.0" layoutY="121.0" opacity="0.75" prefHeight="409.0" prefWidth="328.0" style="-fx-background-color: #393847;">
+         <children>
+            <TextField layoutX="121.0" layoutY="79.0" prefHeight="26.0" prefWidth="185.0" style="-fx-background-color: #ffffff;" />
+            <TextField layoutX="121.0" layoutY="154.0" prefHeight="26.0" prefWidth="185.0" style="-fx-background-color: white;" />
+            <TextField layoutX="123.0" layoutY="228.0" prefHeight="26.0" prefWidth="185.0" style="-fx-background-color: white;" />
+            <Text fill="WHITE" layoutX="11.0" layoutY="97.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID utilisateur :" wrappingWidth="91.29217529296875" />
+            <Text fill="WHITE" layoutX="2.0" layoutY="246.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Numéro utilisateur :" wrappingWidth="120.12811279296875" />
+            <Text fill="WHITE" layoutX="11.0" layoutY="172.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom utlisateur" wrappingWidth="91.29217529296875" />
+            <Button layoutX="132.0" layoutY="318.0" mnemonicParsing="false" text="Se connecter" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

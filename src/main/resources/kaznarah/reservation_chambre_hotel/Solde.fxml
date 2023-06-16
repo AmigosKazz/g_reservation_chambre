@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="701.6" prefWidth="1008.8" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kaznarah.reservation_chambre_hotel.controllers.SoldeController">
+   <children>
+      <Pane layoutX="22.0" layoutY="87.0" opacity="0.75" prefHeight="606.0" prefWidth="277.0" style="-fx-background-color: grey;">
+         <children>
+            <TextField fx:id="id_solde" editable="false" layoutX="91.0" layoutY="101.0" style="-fx-background-color: white;" />
+            <TextField fx:id="solde_actuel" layoutX="91.0" layoutY="167.0" style="-fx-background-color: white;" />
+            <Text fill="WHITE" layoutX="14.0" layoutY="118.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID :" />
+            <Text fill="WHITE" layoutX="10.0" layoutY="184.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Solde Actuel :" />
+            <Button fx:id="btn_annuler" layoutX="150.0" layoutY="260.0" mnemonicParsing="false" onAction="#onBtnAnnulerClicked" prefHeight="32.0" prefWidth="92.0" style="-fx-background-color: rgb(255, 0, 0);" text="Annullé" textFill="WHITE" />
+            <Button fx:id="btn_ajouter" layoutX="14.0" layoutY="260.0" mnemonicParsing="false" onAction="#onBtnAjouterClicked" prefHeight="32.0" prefWidth="92.0" style="-fx-background-color: rgba(9, 84, 24, 0.852);;" text="Ajouter" textFill="WHITE">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <Button fx:id="btn_modifier" layoutX="14.0" layoutY="260.0" mnemonicParsing="false" onAction="#onBtnModifierClicked" prefHeight="32.0" prefWidth="92.0" style="-fx-background-color: rgba(9, 84, 24, 0.852);;" text="Modifier" textFill="WHITE">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <Button fx:id="btn_supprimer" layoutX="150.0" layoutY="260.0" mnemonicParsing="false" onAction="#onBtnSupprimerClicked" prefHeight="32.0" prefWidth="92.0" style="-fx-background-color: rgb(255, 0, 0);" text="Supprimer" textFill="WHITE">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <Text fx:id="txt_nouveau_solde" layoutX="98.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NOUVEAU SOLDE" />
+         </children></Pane>
+      <Pane layoutX="315.0" layoutY="87.0" opacity="0.75" prefHeight="606.0" prefWidth="682.0" style="-fx-background-color: grey;">
+         <children>
+            <TextField fx:id="recherche" layoutX="516.0" layoutY="14.0" onKeyPressed="#onSearchText" style="-fx-background-color: white;" />
+            <Text layoutX="420.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rechercher :" />
+            <TableView fx:id="table_solde" layoutX="14.0" layoutY="54.0" onMouseClicked="#getSelectedRow" prefHeight="545.0" prefWidth="660.0">
+              <columns>
+                <TableColumn fx:id="col_id" prefWidth="131.20001220703125" text="ID" />
+                <TableColumn fx:id="col_solde" prefWidth="517.6000061035156" text="SOLDE ACTUEL" />
+              </columns>
+            </TableView>
+         </children></Pane>
+   </children>
+</AnchorPane>

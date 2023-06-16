@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="752.0" prefWidth="1247.0" stylesheets="@../../assets/styles.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kaznarah.reservation_chambre_hotel.controllers.MainController">
+   <children>
+      <BorderPane layoutX="-46.0" layoutY="-33.0" prefHeight="632.0" prefWidth="958.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <left>
+            <Pane prefHeight="638.0" prefWidth="238.0" style="-fx-background-color: #393847;" BorderPane.alignment="CENTER">
+               <children>
+                  <Pane fx:id="menu_accueil" layoutX="24.0" layoutY="14.0" prefHeight="33.0" prefWidth="200.0" styleClass="item-link">
+                     <children>
+                        <Text fill="WHITE" layoutX="9.0" layoutY="22.0" onMouseClicked="#onMenuAccueilClicked" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="item-link" text="Acceuil" textAlignment="CENTER" wrappingWidth="181.33673095703125">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Text>
+                     </children>
+                  </Pane>
+                  <Pane fx:id="menu_solde" layoutX="24.0" layoutY="120.0" prefHeight="33.0" prefWidth="200.0" styleClass="item-link" stylesheets="@../../assets/styles.css">
+                     <children>
+                        <Text fill="WHITE" layoutX="9.0" layoutY="22.0" onMouseClicked="#onMenuSoldeClicked" strokeType="OUTSIDE" strokeWidth="0.0" text="Solde" textAlignment="CENTER" wrappingWidth="181.33673095703125">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Text>
+                     </children>
+                  </Pane>
+                  <Pane fx:id="menu_occuper" layoutX="19.0" layoutY="299.0" prefHeight="33.0" prefWidth="200.0" styleClass="item-link">
+                     <children>
+                        <Text fill="WHITE" layoutX="9.0" layoutY="22.0" onMouseClicked="#onMenuOcuperClicked" strokeType="OUTSIDE" strokeWidth="0.0" text="Occuper" textAlignment="CENTER" wrappingWidth="181.33673095703125">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </Pane>
+                  <Pane fx:id="menu_chambre" layoutX="24.0" layoutY="183.0" prefHeight="33.0" prefWidth="200.0" styleClass="item-link">
+                     <children>
+                        <Text fill="WHITE" layoutX="9.0" layoutY="22.0" onMouseClicked="#onMenuChambreClicked" strokeType="OUTSIDE" strokeWidth="0.0" text="Chambre" textAlignment="CENTER" wrappingWidth="181.33673095703125">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Text>
+                     </children>
+                  </Pane>
+                  <Pane fx:id="menu_reservation" layoutX="19.0" layoutY="241.0" prefHeight="33.0" prefWidth="200.0" styleClass="item-link">
+                     <children>
+                        <Text fill="WHITE" layoutX="9.0" layoutY="22.0" onMouseClicked="#onMenuReservationClicked" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="item-link" text="Reservation" textAlignment="CENTER" wrappingWidth="181.33673095703125">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </Pane>
+                  <Pane fx:id="menu_sejour" layoutX="19.0" layoutY="357.0" prefHeight="33.0" prefWidth="200.0" styleClass="item-link">
+                     <children>
+                        <Text fill="WHITE" layoutX="9.0" layoutY="22.0" onMouseClicked="#onMenuSejourClicked" strokeType="OUTSIDE" strokeWidth="0.0" text="Sejour" textAlignment="CENTER" wrappingWidth="181.33673095703125">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </Pane>
+                  <Pane fx:id="btn_deconnecter" layoutX="61.0" layoutY="487.0" onMouseClicked="#onLogoutClickedd" prefHeight="35.0" prefWidth="114.0" styleClass="item-link">
+                     <children>
+                        <Text fill="WHITE" layoutX="12.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Se Deconnecter" textAlignment="CENTER" wrappingWidth="89.33673095703125" />
+                     </children>
+                  </Pane>
+               </children>
+            </Pane>
+         </left>
+         <top>
+            <Pane prefHeight="50.0" prefWidth="912.0" style="-fx-background-color: #5EA3E2;" BorderPane.alignment="CENTER">
+               <children>
+                  <Text layoutX="290.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gestion des Reservations des chambres d'hotel" textAlignment="CENTER">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Text>
+               </children>
+            </Pane>
+         </top>
+         <center>
+            <Pane fx:id="content" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER" />
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,12 @@
+.item-link{
+    -fx-cursor: hand;
+    -fx-background-color:  #3C3E47;
+}
+
+.item-link:hover{
+    -fx-background-color: blue;
+}
+
+.item-link:active{
+    -fx-background-color: blue;
+}
