@@ -11,7 +11,7 @@
 
 <AnchorPane prefHeight="701.6" prefWidth="1008.8" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kaznarah.reservation_chambre_hotel.controllers.ChambreController">
    <children>
-      <Pane layoutX="15.0" layoutY="83.0" opacity="0.75" prefHeight="608.0" prefWidth="280.0" style="-fx-background-color: GREY;">
+      <Pane layoutX="18.0" layoutY="83.0" opacity="0.75" prefHeight="606.0" prefWidth="277.0" style="-fx-background-color: GREY;">
          <children>
             <TextField fx:id="d_numero_chambre" editable="false" layoutX="142.0" layoutY="90.0" prefHeight="25.0" prefWidth="123.0" />
             <TextField fx:id="designation" layoutX="141.0" layoutY="154.0" prefHeight="25.0" prefWidth="123.0" />
@@ -38,13 +38,18 @@
                </cursor></Button>
             <Text fx:id="text_nouveau__chambre" layoutX="83.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NOUVEAU CHAMBRE" />
             <TextField fx:id="prix_unitaire" layoutX="138.0" layoutY="270.0" prefHeight="25.0" prefWidth="123.0" />
+            <Button fx:id="expoterPdf" layoutX="79.0" layoutY="459.0" mnemonicParsing="false" onAction="#onBtnExpoterPdfrClicked" prefHeight="25.0" prefWidth="106.0" style="-fx-background-color: #0000ff;" text="Exporter en PDF" textFill="WHITE">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
          </children>
       </Pane>
-      <Pane layoutX="306.0" layoutY="83.0" opacity="0.75" prefHeight="608.0" prefWidth="643.0" style="-fx-background-color: GREY;">
+      <Pane layoutX="309.0" layoutY="83.0" opacity="0.75" prefHeight="608.0" prefWidth="643.0" style="-fx-background-color: GREY;">
          <children>
             <TextField fx:id="rechercher" layoutX="480.0" layoutY="14.0" onKeyPressed="#onSearchText" prefHeight="25.0" prefWidth="116.0" />
             <Text layoutX="407.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rechercher :" />
-            <TableView fx:id="table_chambre" layoutX="14.0" layoutY="49.0" onMouseClicked="#getTableChambre" prefHeight="550.0" prefWidth="600.0">
+            <TableView fx:id="table_chambre" layoutX="14.0" layoutY="49.0" onMouseClicked="#getTableChambre" prefHeight="560.0" prefWidth="600.0">
               <columns>
                 <TableColumn fx:id="col_num_chambre" prefWidth="124.0" text="Numéro de chambre" />
                 <TableColumn fx:id="col_designation" prefWidth="147.20001220703125" text="Designation" />

@@ -1,16 +1,86 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<AnchorPane prefHeight="701.6" prefWidth="1008.8" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="701.6" prefWidth="1008.8" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Text layoutX="247.0" layoutY="169.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Accueil">
+      <Text layoutX="389.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ACCEUIL" wrappingWidth="229.0517578125">
          <font>
             <Font name="Verdana" size="51.0" />
          </font>
       </Text>
+      <Text layoutX="294.0" layoutY="173.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bienvenue sur notre nouvelle application de gestion de chambres d'hôtel, conçue pour simplifier et améliorer votre expérience de réservation et de gestion de chambres. Que vous soyez un hôtelier souhaitant optimiser vos opérations ou un voyageur à la recherche d'un hébergement confortable, notre application est là pour vous faciliter la vie." textAlignment="CENTER" wrappingWidth="420.69244384765625" />
+      <ImageView fitHeight="147.0" fitWidth="214.0" layoutX="96.0" layoutY="292.0">
+         <image>
+            <Image url="@../../assets/chambre1.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="147.0" fitWidth="214.0" layoutX="397.0" layoutY="292.0">
+         <image>
+            <Image url="@../../assets/chambre2.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="715.0" layoutY="291.0">
+         <image>
+            <Image url="@../../assets/chambre3.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="17.0" fitWidth="18.0" layoutX="543.0" layoutY="660.0">
+         <image>
+            <Image url="@../../assets/facebook_26px.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="17.0" fitWidth="18.0" layoutX="351.0" layoutY="614.0">
+         <image>
+            <Image url="@../../assets/phone_26px.png" />
+         </image>
+      </ImageView>
+      <Pane layoutX="334.0" layoutY="38.0" opacity="0.23" prefHeight="80.0" prefWidth="339.0" style="-fx-background-color: black;" />
+      <Text layoutX="428.0" layoutY="597.0" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="0.0" text="Veuillez Nous contacter :" textAlignment="CENTER">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Text>
+      <Text fill="#725959" layoutX="375.0" layoutY="628.0" strokeType="OUTSIDE" strokeWidth="0.0" text="+261 34 44 263 00">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Text>
+      <Text fill="#725959" layoutX="390.0" layoutY="672.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\@Kazarah_12">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Text>
+      <Text layoutX="619.0" layoutY="632.0" strokeType="OUTSIDE" strokeWidth="0.0">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Text>
+      <Text fill="#725959" layoutX="576.0" layoutY="673.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Andrinarivo Philisabellio Ndalah Kaznarah">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="17.0" fitWidth="18.0" layoutX="543.0" layoutY="614.0">
+         <image>
+            <Image url="@../../assets/linkedin_2_50px.png" />
+         </image>
+      </ImageView>
+      <ImageView layoutX="348.0" layoutY="656.0">
+         <image>
+            <Image url="@../../assets/Twitter_24px.png" />
+         </image>
+      </ImageView>
+      <Text fill="#725959" layoutX="578.0" layoutY="631.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Andrinarivo Kaznarah">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Text>
+      <Pane layoutX="-1.0" layoutY="551.0" opacity="0.22" prefHeight="150.0" prefWidth="1009.0" style="-fx-background-color: rgb(19,29,100);;" />
    </children>
 </AnchorPane>

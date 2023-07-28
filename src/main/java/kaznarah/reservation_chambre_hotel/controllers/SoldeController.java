@@ -12,6 +12,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
 import kaznarah.reservation_chambre_hotel.models.Solde;
 import kaznarah.reservation_chambre_hotel.utils.ConnexionDB;
+import kaznarah.reservation_chambre_hotel.utils.ExportDoc;
 import kaznarah.reservation_chambre_hotel.utils.MessageBox;
 
 
@@ -19,8 +20,10 @@ import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
 import java.util.Random;
 import java.util.ResourceBundle;
+import java.util.List;
 
 public class SoldeController implements Initializable {
 
@@ -45,8 +48,9 @@ public class SoldeController implements Initializable {
     @FXML
     private TextField id_solde;
 
+
     @FXML
-    private TextField recherche;
+    private TextField rechercher;
 
     @FXML
     private TextField solde_actuel;
@@ -56,6 +60,9 @@ public class SoldeController implements Initializable {
 
     @FXML
     private Text txt_nouveau_solde;
+
+    @FXML
+    private Button exporter_pdf;
 
     Connection connection;
     PreparedStatement preparedStatement;
@@ -68,6 +75,7 @@ public class SoldeController implements Initializable {
         this.toggleButtonsModifierSupprimer(false, "NOUVEAU SOLDE");
         this.listeSolde();
         this.genererId();
+        this.visibleBtnExporterPdf(false);
 
     }
     public void toggleButtonsModifierSupprimer(Boolean arg1, String title){
@@ -79,6 +87,7 @@ public class SoldeController implements Initializable {
     void getSelectedRow(MouseEvent event) {
 
         this.toggleButtonsModifierSupprimer(true, "MODIFICATION SOLDE");
+        this.visibleBtnExporterPdf(false);
         Solde solde =table_solde.getSelectionModel().getSelectedItem();
         id_solde.setText(solde.getId() + ""); // convertir en String
         solde_actuel.setText(solde.getSoldeActuel()+"");
@@ -114,8 +123,6 @@ public class SoldeController implements Initializable {
                 e.printStackTrace();
             }
         }
-
-
     }
 
     @FXML
@@ -135,7 +142,7 @@ public class SoldeController implements Initializable {
 
         //Verification si les champ vide ne sont pas vide
         if (idSolde < 0 || soldeActuel < 0){
-            MessageBox.showInfo(Alert.AlertType.ERROR, "Veillez verifier le champ vide", "Nouveau chambre");
+                MessageBox.showInfo(Alert.AlertType.ERROR, "Veillez verifier le champ vide", "Nouveau chambre");
         } else {
             String sql = "UPDATE solde SET solde=? WHERE id =?;";
 
@@ -197,8 +204,42 @@ public class SoldeController implements Initializable {
 
     @FXML
     void onSearchText(KeyEvent event) {
+        String recherche = rechercher.getText();
+        if (recherche.isEmpty()) {
+            this.listeSolde();
+        } else {
+            data.clear();
+            connection = ConnexionDB.mydb();
+            String sql = "SELECT * FROM solde WHERE id=?;";
 
+            try {
+                int valeurRechercher = Integer.parseInt(recherche);
+                preparedStatement = connection.prepareStatement(sql);
+                preparedStatement.setInt(1, valeurRechercher);
+                resultSet = preparedStatement.executeQuery();
+
+                List<Solde> soldes = new ArrayList<>();
+                while (resultSet.next()){
+                    soldes.add(new Solde(resultSet.getInt("id"),resultSet.getInt("solde")));
+                }
+
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
     }
+
+    public void visibleBtnExporterPdf(boolean arg){
+        exporter_pdf.setVisible(arg);
+    }
+    //exporter en PDF
+    @FXML
+    void onBtnExporterPdfClicked(ActionEvent event) {
+        ExportDoc.exportToPDF(table_solde, ExportDoc.getFilePath("PDF files","*.pdf"));
+    }
+
+
     //fonction clear data:
     public void clearData(){
         solde_actuel.setText("");
@@ -213,6 +254,7 @@ public class SoldeController implements Initializable {
         String sql = "SELECT * FROM solde;";
 
         try{
+            assert connection != null;
             preparedStatement = connection.prepareStatement(sql);
             resultSet = preparedStatement.executeQuery();
 

@@ -31,4 +31,5 @@ public class Solde {
     public void setSoldeActuel(int soldeActuel) {
         this.soldeActuel = soldeActuel;
     }
+
 }

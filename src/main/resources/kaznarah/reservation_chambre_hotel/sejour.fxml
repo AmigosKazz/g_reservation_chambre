@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
@@ -10,30 +13,46 @@
 
 <AnchorPane prefHeight="701.6" prefWidth="1008.8" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kaznarah.reservation_chambre_hotel.controllers.SejourController">
    <children>
-      <Pane layoutX="26.0" layoutY="81.0" opacity="0.75" prefHeight="608.0" prefWidth="280.0" style="-fx-background-color: GREY;">
+      <Pane layoutX="21.0" layoutY="82.0" opacity="0.75" prefHeight="606.0" prefWidth="277.0" style="-fx-background-color: GREY;">
          <children>
-            <TextField fx:id="id_sejour" layoutX="134.0" layoutY="86.0" prefHeight="25.0" prefWidth="127.0" />
-            <TextField fx:id="id_nom_de_client" layoutX="134.0" layoutY="150.0" prefHeight="25.0" prefWidth="127.0" />
-            <TextField fx:id="id_date_entre" layoutX="134.0" layoutY="205.0" prefHeight="25.0" prefWidth="127.0" />
-            <TextField fx:id="id_nombre_jour" layoutX="134.0" layoutY="267.0" prefHeight="25.0" prefWidth="127.0" />
-            <TextField fx:id="id_numeri_chambre" layoutX="134.0" layoutY="317.0" prefHeight="25.0" prefWidth="127.0" />
-            <TextField fx:id="id_telephone" layoutX="134.0" layoutY="379.0" prefHeight="25.0" prefWidth="127.0" />
+            <TextField fx:id="id_sejour" editable="false" layoutX="136.0" layoutY="86.0" prefHeight="25.0" prefWidth="127.0" />
+            <TextField fx:id="id_nom_de_client" layoutX="136.0" layoutY="150.0" prefHeight="25.0" prefWidth="127.0" />
+            <TextField fx:id="id_nombre_jour" layoutX="136.0" layoutY="260.0" prefHeight="25.0" prefWidth="127.0" />
+            <TextField fx:id="id_telephone" layoutX="136.0" layoutY="378.0" prefHeight="25.0" prefWidth="127.0" />
             <Text layoutX="10.0" layoutY="103.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID Sejour :" />
-            <Text layoutX="14.0" layoutY="276.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre de jour :" />
+            <Text layoutX="14.0" layoutY="277.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre de jour :" />
             <Text layoutX="14.0" layoutY="222.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date d'entrée :" />
-            <Text layoutX="9.0" layoutY="167.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom de client" />
+            <Text layoutX="9.0" layoutY="167.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom de client :" />
             <Text layoutX="14.0" layoutY="396.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Téléphone :" />
             <Text layoutX="6.0" layoutY="334.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Numéro de la chambre:" />
-            <Button fx:id="btn_ajouter" layoutX="30.0" layoutY="448.0" mnemonicParsing="false" onAction="#onBtnAjouterrClicked" prefHeight="25.0" prefWidth="91.0" style="-fx-background-color: rgba(9, 84, 24, 0.852);" text="Ajouter" textFill="WHITE" />
-            <Button fx:id="btn_annullé" layoutX="152.0" layoutY="448.0" mnemonicParsing="false" onAction="#onBtnAnnuléClicked" prefHeight="25.0" prefWidth="91.0" style="-fx-background-color: RED;" text="Annulé" textFill="WHITE" />
-            <Button fx:id="btn_modifier" layoutX="30.0" layoutY="448.0" mnemonicParsing="false" onAction="#onBtnModifierClicked" prefHeight="25.0" prefWidth="91.0" style="-fx-background-color: rgba(9, 84, 24, 0.852);" text="Modifier" textFill="WHITE" />
-            <Button fx:id="btn_supprimmer" layoutX="152.0" layoutY="448.0" mnemonicParsing="false" onAction="#onBtnSupprimerClicked" prefHeight="25.0" prefWidth="91.0" style="-fx-background-color: RED;" text="Supprimmer" textFill="WHITE" />
+            <Button fx:id="btn_ajouter" layoutX="30.0" layoutY="448.0" mnemonicParsing="false" onAction="#onBtnAjouterrClicked" prefHeight="25.0" prefWidth="91.0" style="-fx-background-color: rgba(9, 84, 24, 0.852);" text="Ajouter" textFill="WHITE">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <Button fx:id="btn_annullé" layoutX="152.0" layoutY="448.0" mnemonicParsing="false" onAction="#onBtnAnnuléClicked" prefHeight="25.0" prefWidth="91.0" style="-fx-background-color: RED;" text="Annulé" textFill="WHITE">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <Button fx:id="btn_modifier" layoutX="30.0" layoutY="448.0" mnemonicParsing="false" onAction="#onBtnModifierClicked" prefHeight="25.0" prefWidth="91.0" style="-fx-background-color: rgba(9, 84, 24, 0.852);" text="Modifier" textFill="WHITE">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <Button fx:id="btn_supprimmer" layoutX="152.0" layoutY="448.0" mnemonicParsing="false" onAction="#onBtnSupprimerClicked" prefHeight="25.0" prefWidth="91.0" style="-fx-background-color: RED;" text="Supprimmer" textFill="WHITE">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
             <Text fx:id="textSejour" layoutX="90.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NOUVEAU SEJOUR" />
+            <ComboBox fx:id="id_numeri_chambre" layoutX="137.0" layoutY="318.0" prefHeight="25.0" prefWidth="127.0" />
+            <DatePicker fx:id="date_entre" layoutX="137.0" layoutY="205.0" prefHeight="25.0" prefWidth="127.0" />
+            <Button fx:id="export_pdf" layoutX="86.0" layoutY="531.0" mnemonicParsing="false" onAction="#onExportPDF" style="-fx-background-color: blue;" text="Exporter en PDF" textFill="WHITE">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
          </children>
       </Pane>
       <Pane layoutX="314.0" layoutY="81.0" opacity="0.75" prefHeight="608.0" prefWidth="643.0" style="-fx-background-color: GREY;">
          <children>
-            <TextField fx:id="rechercher" layoutX="487.0" layoutY="14.0" onKeyPressed="#onSearchText" prefHeight="25.0" prefWidth="127.0" />
+            <TextField fx:id="recherche" layoutX="487.0" layoutY="14.0" onKeyPressed="#onSearchText" prefHeight="25.0" prefWidth="127.0" />
             <Text layoutX="415.0" layoutY="31.0" onKeyPressed="#on" onRotationFinished="#t" strokeType="OUTSIDE" strokeWidth="0.0" text="Rechercher :" />
             <TableView fx:id="table_sejour" layoutX="14.0" layoutY="45.0" onMouseClicked="#getTableSejour" prefHeight="560.0" prefWidth="600.0">
               <columns>

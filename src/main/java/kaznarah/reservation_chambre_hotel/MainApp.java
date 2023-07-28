@@ -18,7 +18,7 @@ public class MainApp extends Application {
         stage.setScene(scene);
         stage.setResizable(false);
         stage.show();
-       // Connection connexion = ConnexionDB.mydb();
+       Connection connexion = ConnexionDB.mydb();
     }
 
     public static void main(String[] args) {

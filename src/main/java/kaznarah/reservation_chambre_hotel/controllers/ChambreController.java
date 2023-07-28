@@ -12,6 +12,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
 import kaznarah.reservation_chambre_hotel.models.Chambre;
 import kaznarah.reservation_chambre_hotel.utils.ConnexionDB;
+import kaznarah.reservation_chambre_hotel.utils.ExportDoc;
 import kaznarah.reservation_chambre_hotel.utils.MessageBox;
 
 import java.net.URL;
@@ -51,6 +52,9 @@ public class ChambreController implements Initializable {
     private TextField rechercher;
 
     @FXML
+    private Button expoterPdf;
+
+    @FXML
     private TableColumn<Chambre, String> col_designation;
 
     @FXML
@@ -71,6 +75,8 @@ public class ChambreController implements Initializable {
     @FXML
     private Text text_nouveau__chambre;
 
+
+
     // Connexion BDD
     Connection connection;
     PreparedStatement preparedStatement;
@@ -83,6 +89,7 @@ public class ChambreController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         this.toggleButtonsModifierSupprimer(false, "NOUVEAU CHAMBRE");
+        this.visibleBtnExportePdf(false);
         this.setNumChambre();
         this.listeChambre();
     }
@@ -96,6 +103,7 @@ public class ChambreController implements Initializable {
     void getTableChambre(MouseEvent event) {
         // lorsqu'on clique sur une ligne de la table, cette fonction envoie la valeur en formulaire
         this.toggleButtonsModifierSupprimer(true, "MODIFIER LA TABLE");
+        this.visibleBtnExportePdf(false);
 
         Chambre chambre = table_chambre.getSelectionModel().getSelectedItem();
         d_numero_chambre.setText(chambre.getNumero_chambre());
@@ -143,9 +151,11 @@ public class ChambreController implements Initializable {
         this.clearData();
     }
 
+
     @FXML
     void onBtnModifierClicked(ActionEvent event) {
         connection = ConnexionDB.mydb();
+
         // Recuperer les donnees de la formulaire
         int prix = Integer.parseInt(prix_unitaire.getText());
         String numChambre = d_numero_chambre.getText();
@@ -304,5 +314,14 @@ public class ChambreController implements Initializable {
         }
 
     }
+
+    public void visibleBtnExportePdf(boolean arg){
+        expoterPdf.setVisible(arg);
+    }
+    @FXML
+    void onBtnExpoterPdfrClicked(ActionEvent event) {
+        ExportDoc.exportToPDF(table_chambre, ExportDoc.getFilePath("PDF files","*.pdf"));
+    }
+
 
 }

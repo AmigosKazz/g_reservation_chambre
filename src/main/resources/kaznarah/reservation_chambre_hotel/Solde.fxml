@@ -31,11 +31,16 @@
                   <Cursor fx:constant="HAND" />
                </cursor></Button>
             <Text fx:id="txt_nouveau_solde" layoutX="98.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NOUVEAU SOLDE" />
+            <Button fx:id="exporter_pdf" layoutX="93.0" layoutY="449.0" mnemonicParsing="false" onAction="#onBtnExporterPdfClicked" prefHeight="32.0" prefWidth="115.0" style="-fx-background-color: blue;" text="Exporter en PDF" textFill="WHITE">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
          </children></Pane>
       <Pane layoutX="315.0" layoutY="87.0" opacity="0.75" prefHeight="606.0" prefWidth="682.0" style="-fx-background-color: grey;">
          <children>
-            <TextField fx:id="recherche" layoutX="516.0" layoutY="14.0" onKeyPressed="#onSearchText" style="-fx-background-color: white;" />
-            <Text layoutX="420.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rechercher :" />
+            <TextField fx:id="rechercher" layoutX="522.0" layoutY="13.0" onKeyPressed="#onSearchText" style="-fx-background-color: white;" />
+            <Text layoutX="442.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rechercher :" />
             <TableView fx:id="table_solde" layoutX="14.0" layoutY="54.0" onMouseClicked="#getSelectedRow" prefHeight="545.0" prefWidth="660.0">
               <columns>
                 <TableColumn fx:id="col_id" prefWidth="131.20001220703125" text="ID" />

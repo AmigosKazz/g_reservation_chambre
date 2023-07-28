@@ -13,6 +13,7 @@ import kaznarah.reservation_chambre_hotel.MainApp;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class MainController implements Initializable {
@@ -56,9 +57,10 @@ public class MainController implements Initializable {
 
     }
 
+    //Prender en parametre le nom de la vue FXML que tu veux charger
     public void loadFxmlView(String view){
         try {
-            this.fxml = FXMLLoader.load(MainApp.class.getResource(view));
+            this.fxml = FXMLLoader.load(Objects.requireNonNull(MainApp.class.getResource(view)));
             content.getChildren().removeAll();
             content.getChildren().setAll(this.fxml);
 
@@ -70,7 +72,7 @@ public class MainController implements Initializable {
     void onMenuAccueilClicked(MouseEvent event)  {
         this.loadFxmlView("Accueil.fxml");
         this.activePane(menu_accueil);
-        Pane[] panes = {menu_sejour, menu_reservation, menu_occuper, menu_chambre, menu_solde};
+        Pane[] panes = {menu_sejour, menu_reservation, menu_occuper, menu_chambre, menu_solde };
         this.deactivePane(panes);
     }
 
@@ -123,7 +125,6 @@ public class MainController implements Initializable {
             pane2.pseudoClassStateChanged(PseudoClass.getPseudoClass("active"), false);
         }
     }
-
 
 
 }

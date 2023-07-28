@@ -3,6 +3,7 @@ package kaznarah.reservation_chambre_hotel.models;
 import java.sql.Date;
 
 public class Reservation {
+    private int nbre_jour;
     private int id_reservation;
     private String votre_nom  ;
     private String votre_mail;
@@ -10,17 +11,17 @@ public class Reservation {
     private Date date;
     private Date date_entre;
 
-    public Reservation(int id_reservation, String votre_nom, String votre_mail, String num_chambre, Date date, Date date_entre, int nbre_jour) {
-        this.id_reservation = id_reservation;
-        this.votre_nom = votre_nom;
-        this.votre_mail = votre_mail;
-        this.num_chambre = num_chambre;
+
+
+    public Reservation(int idReservation, String numChambre, Date date, Date dateEntree, int nbrJour, String nomClient, String mail) {
+        this.id_reservation = idReservation;
+        this.num_chambre = numChambre;
         this.date = date;
-        this.date_entre = date_entre;
-        this.nbre_jour = nbre_jour;
+        this.date_entre = dateEntree;
+        this.nbre_jour = nbrJour;
+        this.votre_nom = nomClient;
+        this.votre_mail = mail;
     }
-
-
 
     public Date getDate() {
         return date;
@@ -38,11 +39,9 @@ public class Reservation {
         this.date_entre = date_entre;
     }
 
-    private int nbre_jour;
+    private int getNombre_jour;
 
-    public Reservation(){
 
-    }
 
     public int getId_reservation() {
         return id_reservation;
@@ -82,5 +81,12 @@ public class Reservation {
 
     public void setNbre_jour(int nbre_jour) {
         this.nbre_jour = nbre_jour;
+    }
+
+    public String getText() {
+        return null;
+    }
+
+    public void setText(String s) {
     }
 }

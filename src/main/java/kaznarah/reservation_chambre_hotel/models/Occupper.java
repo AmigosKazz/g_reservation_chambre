@@ -1,5 +1,6 @@
 package kaznarah.reservation_chambre_hotel.models;
 
+
 public class Occupper {
     private int id_occuper;
     private int id_reservation;
