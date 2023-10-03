@@ -290,6 +290,7 @@ public class SoldeController implements Initializable {
         connection = ConnexionDB.mydb();
 
         try{
+            assert connection != null;
             preparedStatement = connection.prepareStatement(sql);
             resultSet = preparedStatement.executeQuery();
             Integer lastID = 0;
